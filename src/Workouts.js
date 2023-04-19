@@ -4,14 +4,16 @@ export const initialWorkouts = [
     reps: 10,
     sets: 4,
     rest: 5,
-    done: false
+    done: false,
+    id : 1
   },
   {
     exercise: "Push Ups",
     reps: 10,
     rest: 10,
     sets: 20,
-    done: false
+    done: false,
+    id : 2
   },
 ]
 
@@ -23,15 +25,18 @@ const exercises = [
   'Crunches',
   'Burpees',
 ]
-
+let id = 2
 export const generateWorkout = () => {
+  id ++
   return {
     exercise: getRandomItem(exercises),
     reps: getRandomInRange(5, 20),
     sets: getRandomInRange(1, 5),
     rest: getRandomInRange(10, 60),
     done: false,
+    id : id
   }
+
 }
 
 const getRandomItem = (items) => {
